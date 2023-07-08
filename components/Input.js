@@ -12,6 +12,7 @@ import {
 } from "@firebase/firestore";
 import { getDownloadURL, ref, uploadString } from "@firebase/storage";
 import {useSession} from "next-auth/react";
+import Image from "next/image";
 function Input () {
     const [input, setInput] = useState("");
     const [selectedFile, setSelectedFile] = useState(null);
@@ -71,7 +72,7 @@ function Input () {
     return  (
 
         <div className={`border-b border-gray-700 p-3 flex space-x-3 overflow-y-scroll scrollbar-hide ${loading && "opacity-60"}`}>
-            <img src={session?.user?.image} alt={"User_avatar"} className={"h-11 w-11 rounded-full cursor-pointer"}/>
+            <Image src={session?.user?.image} width={40} height={40} alt={"User_avatar"} className={"h-11 w-11 rounded-full cursor-pointer"}/>
             <div className={"w-full divide-y divide-gray-700"}>
                 <div className={`${selectedFile && "pb-7"} ${input && "space-y-2.5"}`}>
                     <textarea value={input}
@@ -83,7 +84,9 @@ function Input () {
                             <div className={"absolute w-8 h-8 bg-[#15181c] hover:bg-[#272c26] bg-opacity-75 rounded-full flex items-center justify-center top-1 left-1 cursor-pointer"} onClick={()=>setSelectedFile(null)}>
                                 <XIcon className={"h-5 text-white "}/>
                             </div>
-                            <img
+                            <Image
+                                width={300}
+                                height={300}
                                 src={selectedFile}
                                 alt={"Selected_image"}
                                 className={"max-h-80 object-contain rounded-2xl"}
