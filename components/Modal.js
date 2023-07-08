@@ -20,6 +20,7 @@ import {
 import { useRouter } from "next/router";
 import Moment from "react-moment";
 import {Transition, Dialog} from "@headlessui/react";
+import Image from "next/image";
 
 function Modal() {
     const { data: session } = useSession();
@@ -89,9 +90,11 @@ function Modal() {
                                 <div className="w-full">
                                     <div className="text-[#6e767d] flex gap-x-3 relative">
                                         <span className="w-0.5 h-full z-[-1] absolute left-5 top-11 bg-gray-600" />
-                                        <img
+                                        <Image
                                             src={post?.userImg}
-                                            alt=""
+                                            alt={""}
+                                            width={50}
+                                            height={50}
                                             className="h-11 w-11 rounded-full"
                                         />
                                         <div>
@@ -114,9 +117,11 @@ function Modal() {
                                     </div>
 
                                     <div className="mt-7 flex space-x-3 w-full">
-                                        <img
+                                        <Image
                                             src={session.user.image}
-                                            alt=""
+                                            alt={""}
+                                            width={50}
+                                            height={50}
                                             className="h-11 w-11 rounded-full"
                                         />
                                         <div className="flex-grow mt-2">

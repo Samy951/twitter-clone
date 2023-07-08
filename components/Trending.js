@@ -21,6 +21,7 @@ function Trending({ result }) {
 
             {result.img ? (
                 <Image
+                    alt={"Trending"}
                     src={result.img}
                     width={70}
                     height={70}

@@ -33,7 +33,7 @@ function PostPage({ trendingResults, followResults, providers }) {
             onSnapshot(doc(db, "posts", id), (snapshot) => {
                 setPost(snapshot.data());
             }),
-        [db]
+        [id]
     );
 
     useEffect(
@@ -45,7 +45,7 @@ function PostPage({ trendingResults, followResults, providers }) {
                 ),
                 (snapshot) => setComments(snapshot.docs)
             ),
-        [db, id]
+        [id]
     );
 
     if (!session) return <Login providers={providers} />;

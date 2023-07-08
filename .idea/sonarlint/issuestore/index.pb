@@ -13,11 +13,7 @@ A
 package-lock.json,f\a\fa288d1472d29beccb489a676f68739ad365fc47
 B
 tailwind.config.js,0\9\0918cbb76f2c44f223706cec9d31a32cd1177ce4
-E
-components/Sidebar.js,0\9\09d7ecddc4f2bd2702a41a150d230a5efc7dc55f
 I
 components/SidebarLink.js,b\e\be4b7b45f3891d85db445d6e214e70d4e353d803
-B
-components/Feed.js,1\a\1acaf6bf98fe163580e5c658f905c7cf50eff687
 ;
 firebase.js,9\0\90c520a7dd2f13faf5a748b18be8b473fea4f1ee

@@ -27,6 +27,7 @@ import Moment from "react-moment";
 import { useRecoilState } from "recoil";
 import { modalState, postIdState } from "../atoms/modalAtom";
 import { db } from "../firebase";
+import Image from "next/image";
 
 function Post({ id, post, postPage }) {
     const { data: session } = useSession();
@@ -83,18 +84,22 @@ function Post({ id, post, postPage }) {
             onClick={() => router.push(`/${id}`)}
         >
             {!postPage && (
-                <img
+                <Image
                     src={post?.userImg}
-                    alt=""
+                    alt={"Profile Pic"}
+                    height={50}
+                    width={50}
                     className="h-11 w-11 rounded-full mr-4"
                 />
             )}
             <div className="flex flex-col space-y-2 w-full">
                 <div className={`flex ${!postPage && "justify-between"}`}>
                     {postPage && (
-                        <img
+                        <Image
                             src={post?.userImg}
-                            alt="Profile Pic"
+                            alt={"Profile Pic"}
+                            height={50}
+                            width={50}
                             className="h-11 w-11 rounded-full mr-4"
                         />
                     )}
@@ -130,11 +135,17 @@ function Post({ id, post, postPage }) {
                 {postPage && (
                     <p className="text-[#d9d9d9] mt-0.5 text-xl">{post?.text}</p>
                 )}
-                <img
+                {post?.image && (
+                <Image
                     src={post?.image}
-                    alt=""
-                    className="rounded-2xl max-h-[700px] object-cover mr-2"
+                    alt={""}
+                    width={500}
+                    height={500}
+                    className={"relative rounded-2xl max-h-[500px] object-cover mr-2"}
                 />
+                )}
+
+
                 <div
                     className={`text-[#6e767d] flex justify-between w-10/12 ${
                         postPage && "mx-auto"
