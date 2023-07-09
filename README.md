@@ -1,8 +1,14 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+I used firebase, google login with NextAuth, RecoilJs and Tailwind
 
-First, run the development server:
+You can login with your google account and post or comment.
+
+## Getting Started
+First of all run the command :
+npm i
+
+then, run the development server:
 
 ```bash
 npm run dev
