@@ -13,8 +13,6 @@ function Comment({ comment }) {
         <div className="p-3 flex cursor-pointer border-b border-gray-700">
             <Image
                 src={comment?.userImg}
-                width={40}
-                height={40}
                 alt=""
                 className="h-11 w-11 rounded-full mr-4"
             />
